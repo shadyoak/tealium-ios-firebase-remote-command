@@ -17,7 +17,7 @@ public protocol FirebaseCommandRunnable {
     func setUserId(_ id: String)
 }
 
-open class FirebaseCommandRunner: FirebaseCommandRunnable {
+public class FirebaseCommandRunner: FirebaseCommandRunnable {
     
     public init() { }
     
