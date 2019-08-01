@@ -7,7 +7,6 @@
 //
 
 import Foundation
-@testable import RemoteCommandModules
 @testable import TealiumSwift
 @testable import Firebase
 

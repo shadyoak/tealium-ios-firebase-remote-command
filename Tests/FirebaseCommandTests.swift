@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import RemoteCommandModules
 @testable import TealiumSwift
 @testable import Firebase
 

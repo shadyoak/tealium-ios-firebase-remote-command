@@ -1,16 +1,15 @@
 //
 //  FirebaseCommandRunner.swift
-//  JSONRemoteCommands
 //
 //  Created by Christina Sund on 7/11/19.
 //  Copyright © 2019 Christina. All rights reserved.
 //
 
 import Foundation
+import FirebaseCore
 import FirebaseAnalytics
-import Firebase
 
-protocol FirebaseCommandRunnable {
+public protocol FirebaseCommandRunnable {
     func createAnalyticsConfig(_ sessionTimeoutSeconds: TimeInterval?, _ minimumSessionSeconds: TimeInterval?, _ analyticsEnabled: Bool?, _ logLevel: FirebaseLoggerLevel)
     func logEvent(_ name: String, _ params: [String: Any])
     func setScreenName(_ screenName: String, _ screenClass: String?)
@@ -18,9 +17,11 @@ protocol FirebaseCommandRunnable {
     func setUserId(_ id: String)
 }
 
-struct FirebaseCommandRunner: FirebaseCommandRunnable {
+open class FirebaseCommandRunner: FirebaseCommandRunnable {
     
-    func createAnalyticsConfig(_ sessionTimeoutSeconds: TimeInterval?, _ minimumSessionSeconds: TimeInterval?, _ analyticsEnabled: Bool?, _ logLevel: FirebaseLoggerLevel) {
+    public init() { }
+    
+    public func createAnalyticsConfig(_ sessionTimeoutSeconds: TimeInterval?, _ minimumSessionSeconds: TimeInterval?, _ analyticsEnabled: Bool?, _ logLevel: FirebaseLoggerLevel) {
         if let sessionTimeoutSeconds = sessionTimeoutSeconds {
             Analytics.setSessionTimeoutInterval(sessionTimeoutSeconds)
         }
@@ -33,15 +34,15 @@ struct FirebaseCommandRunner: FirebaseCommandRunnable {
         }
     }
     
-    func logEvent(_ name: String, _ params: [String : Any]) {
+    public func logEvent(_ name: String, _ params: [String : Any]) {
         Analytics.logEvent(name, parameters: params)
     }
     
-    func setScreenName(_ screenName: String, _ screenClass: String?) {
+    public func setScreenName(_ screenName: String, _ screenClass: String?) {
         Analytics.setScreenName(screenName, screenClass: screenClass)
     }
     
-    func setUserProperty(_ property: String, value: String) {
+    public func setUserProperty(_ property: String, value: String) {
         if value == "" {
             Analytics.setUserProperty(nil, forName: property)
         } else {
@@ -49,7 +50,7 @@ struct FirebaseCommandRunner: FirebaseCommandRunnable {
         }
     }
     
-    func setUserId(_ id: String) {
+    public func setUserId(_ id: String) {
         Analytics.setUserID(id)
     }
     

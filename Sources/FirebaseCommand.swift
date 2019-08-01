@@ -1,17 +1,16 @@
 //
 //  FirebaseCommand.swift
-//  FirebaseTest
 //
 //  Created by Craig Rouse on 18/12/2017.
 //  Copyright © 2017 Tealium. All rights reserved.
 //
 
 import Foundation
+import FirebaseCore
 import FirebaseAnalytics
-import Firebase
 import TealiumSwift
 
-struct FirebaseCommand {
+public class FirebaseCommand {
 
     enum FirebaseKey {
         static let sessionTimeout = "firebase_session_timeout_seconds"
@@ -38,11 +37,11 @@ struct FirebaseCommand {
 
     var firebaseCommandRunner: FirebaseCommandRunnable
 
-    init(firebaseCommandRunner: FirebaseCommandRunnable = FirebaseCommandRunner()) {
+    public init(firebaseCommandRunner: FirebaseCommandRunnable = FirebaseCommandRunner()) {
         self.firebaseCommandRunner = firebaseCommandRunner
     }
 
-    func remoteCommand() -> TealiumRemoteCommand {
+    public func remoteCommand() -> TealiumRemoteCommand {
         return TealiumRemoteCommand(commandId: "firebaseAnalytics", description: "Firebase Remote Command") { response in
 
             let payload = response.payload()
