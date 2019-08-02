@@ -1,5 +1,6 @@
 //
 //  FirebaseCommand.swift
+
 //
 //  Created by Craig Rouse on 18/12/2017.
 //  Copyright © 2017 Tealium. All rights reserved.
@@ -52,68 +53,71 @@ public class FirebaseCommand {
             let firebaseCommands = commands.map { command in
                 return command.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             }
-
-            firebaseCommands.forEach { command in
-                let lowercasedCommand = command.lowercased()
-                switch lowercasedCommand {
-                case FirebaseCommand.config:
-                    var firebaseSessionTimeout: TimeInterval?
-                    var firebaseSessionMinimumSeconds: TimeInterval?
-                    var firebaseAnalyticsEnabled: Bool?
-                    var firebaseLogLevel = FirebaseLoggerLevel.min
-                    if let sessionTimeout = payload[FirebaseKey.sessionTimeout] as? String {
-                        firebaseSessionTimeout = TimeInterval(sessionTimeout)
-                    }
-                    if let sessionMinimumSeconds = payload[FirebaseKey.minSeconds] as? String {
-                        firebaseSessionMinimumSeconds = TimeInterval(sessionMinimumSeconds)
-                    }
-                    if let analyticsEnabled = payload[FirebaseKey.analyticsEnabled] as? String {
-                        firebaseAnalyticsEnabled = Bool(analyticsEnabled)
-                    }
-                    if let logLevel = payload[FirebaseKey.logLevel] as? String {
-                        firebaseLogLevel = self.parseLogLevel(logLevel)
-                    }
-                    self.firebaseCommandRunner.createAnalyticsConfig(firebaseSessionTimeout, firebaseSessionMinimumSeconds, firebaseAnalyticsEnabled, firebaseLogLevel)
-                case FirebaseCommand.logEvent:
-                    guard let name = payload[FirebaseKey.eventName] as? String else {
-                        return
-                    }
-                    let eventName = self.mapEventNames(name)
-                    guard let params = payload[FirebaseKey.eventParams] as? Dictionary<String, Any> else {
-                        return
-                    }
-                    var normalizedParams = [String: Any]()
-                    for param in params {
-                        let newKeyName = self.paramsMap(param.key)
-                        if let normalizedValue = param.value as? NSArray {
-                            normalizedParams[newKeyName] = normalizedValue.componentsJoined(by: ",")
-                        } else {
-                            normalizedParams[newKeyName] = param.value
-                        }
-                    }
-                    self.firebaseCommandRunner.logEvent(eventName, normalizedParams)
-                case FirebaseCommand.setScreenName:
-                    guard let screenName = payload[FirebaseKey.screenName] as? String else {
-                        return
-                    }
-                    let screenClass = payload[FirebaseKey.screenClass] as? String
-                    self.firebaseCommandRunner.setScreenName(screenName, screenClass)
-                case FirebaseCommand.setUserProperty:
-                    guard let propertyName = payload[FirebaseKey.userPropertyName] as? String else {
-                        return
-                    }
-                    guard let propertyValue = payload[FirebaseKey.userPropertyValue] as? String else {
-                        return
-                    }
-                    self.firebaseCommandRunner.setUserProperty(propertyName, value: propertyValue)
-                case FirebaseCommand.setUserId:
-                    guard let userId = payload[FirebaseKey.userId] as? String else {
-                        return
-                    }
-                    self.firebaseCommandRunner.setUserId(userId)
-                default:
+             self.parseCommands(firebaseCommands, payload: payload)
+        }
+    }
+    
+    func parseCommands(_ commands: [String], payload: [String: Any]) {
+        commands.forEach { command in
+            let lowercasedCommand = command.lowercased()
+            switch lowercasedCommand {
+            case FirebaseCommand.config:
+                var firebaseSessionTimeout: TimeInterval?
+                var firebaseSessionMinimumSeconds: TimeInterval?
+                var firebaseAnalyticsEnabled: Bool?
+                var firebaseLogLevel = FirebaseLoggerLevel.min
+                if let sessionTimeout = payload[FirebaseKey.sessionTimeout] as? String {
+                    firebaseSessionTimeout = TimeInterval(sessionTimeout)
+                }
+                if let sessionMinimumSeconds = payload[FirebaseKey.minSeconds] as? String {
+                    firebaseSessionMinimumSeconds = TimeInterval(sessionMinimumSeconds)
+                }
+                if let analyticsEnabled = payload[FirebaseKey.analyticsEnabled] as? String {
+                    firebaseAnalyticsEnabled = Bool(analyticsEnabled)
+                }
+                if let logLevel = payload[FirebaseKey.logLevel] as? String {
+                    firebaseLogLevel = self.parseLogLevel(logLevel)
+                }
+                self.firebaseCommandRunner.createAnalyticsConfig(firebaseSessionTimeout, firebaseSessionMinimumSeconds, firebaseAnalyticsEnabled, firebaseLogLevel)
+            case FirebaseCommand.logEvent:
+                guard let name = payload[FirebaseKey.eventName] as? String else {
                     return
                 }
+                let eventName = self.mapEventNames(name)
+                guard let params = payload[FirebaseKey.eventParams] as? Dictionary<String, Any> else {
+                    return
+                }
+                var normalizedParams = [String: Any]()
+                for param in params {
+                    let newKeyName = self.paramsMap(param.key)
+                    if let normalizedValue = param.value as? NSArray {
+                        normalizedParams[newKeyName] = normalizedValue.componentsJoined(by: ",")
+                    } else {
+                        normalizedParams[newKeyName] = param.value
+                    }
+                }
+                self.firebaseCommandRunner.logEvent(eventName, normalizedParams)
+            case FirebaseCommand.setScreenName:
+                guard let screenName = payload[FirebaseKey.screenName] as? String else {
+                    return
+                }
+                let screenClass = payload[FirebaseKey.screenClass] as? String
+                self.firebaseCommandRunner.setScreenName(screenName, screenClass)
+            case FirebaseCommand.setUserProperty:
+                guard let propertyName = payload[FirebaseKey.userPropertyName] as? String else {
+                    return
+                }
+                guard let propertyValue = payload[FirebaseKey.userPropertyValue] as? String else {
+                    return
+                }
+                self.firebaseCommandRunner.setUserProperty(propertyName, value: propertyValue)
+            case FirebaseCommand.setUserId:
+                guard let userId = payload[FirebaseKey.userId] as? String else {
+                    return
+                }
+                self.firebaseCommandRunner.setUserId(userId)
+            default:
+                return
             }
         }
     }
