@@ -6,6 +6,8 @@ A [Firebase](https://firebase.google.com/docs/analytics/ios/start) integration w
 
 Clone this repo and execute the `pod install` command in the project directory. You can then run the sample app to get an idea of the functionality.
 
+> Note: Please navigate to the Keys folder within the TealiumFirebaseExample project and delete the file titled _REPLACE-ME.md_. Replace this file with the _GoogleService-Info.plist_ from your Firebase Console. Information about how to retrieve this file is located [here](https://firebase.google.com/docs/ios/setup#add-config-file).
+
 ### Prerequisites
 
 * Tealium IQ account
