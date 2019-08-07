@@ -56,7 +56,7 @@ class GamingViewController: UIViewController {
     @IBAction func levelStepper(_ sender: UIStepper) {
         levelLabel.text = String(Int(sender.value))
         data[GamingViewController.level] = String(Int(sender.value))
-        data[GamingViewController.charachter] = "mario"
+        data[GamingViewController.character] = "mario"
         TealiumHelper.trackEvent(title: "level_up", data: data)
     }
     
@@ -79,11 +79,11 @@ class GamingViewController: UIViewController {
 extension GamingViewController {
     static let contentType = "content_type"
     static let shareId = "share_id"
-    static let productName = "number_of_passengers"
+    static let productName = "product_name"
     static let currencyType = "currency_type"
-    static let tokens = "travel_class"
-    static let achievementId = "travel_origin"
-    static let level = "travel_destination"
-    static let charachter = "travel_start_date"
-    static let score = "travel_end_date"
+    static let tokens = "tokens"
+    static let achievementId = "achievement_id"
+    static let level = "level"
+    static let character = "character"
+    static let score = "score"
 }

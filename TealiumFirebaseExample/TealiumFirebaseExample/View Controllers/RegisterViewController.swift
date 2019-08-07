@@ -49,5 +49,5 @@ extension RegisterViewController: UITextFieldDelegate {
 extension RegisterViewController {
     static let customerId = "customer_id"
     static let signUpMethod = "signup_method"
-    static let fullName = "username"
+    static let fullName = "customer_full_name"
 }

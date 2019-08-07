@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B76AEDC3567BEF2140862759 /* Pods_TealiumFirebaseExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03FF67BC27A5211ADA09BB21 /* Pods_TealiumFirebaseExample.framework */; };
-		CFC34EF022F8D7EB00E8723F /* ***~REPLACE-ME~***.md in Resources */ = {isa = PBXBuildFile; fileRef = CFC34EEF22F8D7EB00E8723F /* ***~REPLACE-ME~***.md */; };
+		CFC34EF022F8D7EB00E8723F /* REPLACE-ME.md in Resources */ = {isa = PBXBuildFile; fileRef = CFC34EEF22F8D7EB00E8723F /* REPLACE-ME.md */; };
 		CFDD8B2E22E1195800358234 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDD8B2D22E1195800358234 /* AppDelegate.swift */; };
 		CFDD8B3322E1195800358234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDD8B3122E1195800358234 /* Main.storyboard */; };
 		CFDD8B3522E1195800358234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFDD8B3422E1195800358234 /* Assets.xcassets */; };
@@ -33,7 +33,7 @@
 /* Begin PBXFileReference section */
 		03FF67BC27A5211ADA09BB21 /* Pods_TealiumFirebaseExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumFirebaseExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EC286F3A27A7722C71C86D /* Pods-TealiumFirebaseExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumFirebaseExample.debug.xcconfig"; path = "Target Support Files/Pods-TealiumFirebaseExample/Pods-TealiumFirebaseExample.debug.xcconfig"; sourceTree = "<group>"; };
-		CFC34EEF22F8D7EB00E8723F /* ***~REPLACE-ME~***.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "***~REPLACE-ME~***.md"; sourceTree = "<group>"; };
+		CFC34EEF22F8D7EB00E8723F /* REPLACE-ME.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "REPLACE-ME.md"; sourceTree = "<group>"; };
 		CFDD8B2A22E1195800358234 /* TealiumFirebaseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TealiumFirebaseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDD8B2D22E1195800358234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFDD8B3222E1195800358234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		CFDD8B2C22E1195800358234 /* TealiumFirebaseExample */ = {
 			isa = PBXGroup;
 			children = (
-				CFC34EEF22F8D7EB00E8723F /* ***~REPLACE-ME~***.md */,
+				CFC34EEF22F8D7EB00E8723F /* REPLACE-ME.md */,
 				CFDD8B2D22E1195800358234 /* AppDelegate.swift */,
 				CFDD8BC522E670E500358234 /* TealiumHelper.swift */,
 				CFDD8B7222E245D400358234 /* DateExtensions.swift */,
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDD8B6F22E234AB00358234 /* Activities.storyboard in Resources */,
-				CFC34EF022F8D7EB00E8723F /* ***~REPLACE-ME~***.md in Resources */,
+				CFC34EF022F8D7EB00E8723F /* REPLACE-ME.md in Resources */,
 				CFDD8B3822E1195800358234 /* LaunchScreen.storyboard in Resources */,
 				CFDD8B3522E1195800358234 /* Assets.xcassets in Resources */,
 				CFDD8B7E22E2800A00358234 /* Ecommerce.storyboard in Resources */,
