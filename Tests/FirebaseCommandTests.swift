@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import TealiumSwift
+@testable import TealiumFirebase
 @testable import Firebase
 
 class FirebaseCommandTests: XCTestCase {

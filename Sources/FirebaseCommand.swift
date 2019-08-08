@@ -9,7 +9,13 @@
 import Foundation
 import FirebaseCore
 import FirebaseAnalytics
+#if COCOAPODS
 import TealiumSwift
+#else
+import TealiumCore
+import TealiumTagManagement
+import TealiumRemoteCommands
+#endif
 
 public class FirebaseCommand {
 

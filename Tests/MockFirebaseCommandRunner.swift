@@ -7,7 +7,8 @@
 //
 
 import Foundation
-@testable import TealiumSwift
+@testable import TealiumFirebase
+import TealiumRemoteCommands
 @testable import Firebase
 
 class MockFirebaseCommandRunner: FirebaseCommandRunnable {

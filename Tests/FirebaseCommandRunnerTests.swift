@@ -7,7 +7,8 @@
 //
 
 import XCTest
-@testable import TealiumSwift
+@testable import TealiumFirebase
+import TealiumRemoteCommands
 
 class FirebaseCommandRunnerTests: XCTestCase {
 
@@ -23,7 +24,7 @@ class FirebaseCommandRunnerTests: XCTestCase {
     override func tearDown() { }
 
     func createRemoteCommandResponse(commandId: String, payload: [String: Any]) -> TealiumRemoteCommandResponse? {
-        let responseDescription = HttpHelpers.httpRequestDescription(commandId: commandId, config: [:], payload: payload)
+        let responseDescription = HttpTestHelpers.httpRequestDescription(commandId: commandId, config: [:], payload: payload)
         if let description = responseDescription {
             return TealiumRemoteCommandResponse(urlString: description)
         }
