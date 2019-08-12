@@ -15,6 +15,7 @@ import TealiumSwift
 import TealiumCore
 import TealiumTagManagement
 import TealiumRemoteCommands
+import TealiumDelegate
 #endif
 
 public class FirebaseCommand {
