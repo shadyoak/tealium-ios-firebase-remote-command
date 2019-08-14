@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF14019D230478B5002AC330 /* FirebaseCommand.swift in Headers */ = {isa = PBXBuildFile; fileRef = CF17EB6122F0E41E00C6086B /* FirebaseCommand.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF14019E230478B5002AC330 /* FirebaseCommandRunner.swift in Headers */ = {isa = PBXBuildFile; fileRef = CF17EB6022F0E41E00C6086B /* FirebaseCommandRunner.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF14FC1322FCE6F0002AC330 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0822FCE6EF002AC330 /* GoogleAppMeasurement.framework */; };
 		CF14FC1422FCE6F0002AC330 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0922FCE6EF002AC330 /* nanopb.framework */; };
 		CF14FC1522FCE6F0002AC330 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0A22FCE6F0002AC330 /* FirebaseCore.framework */; };
@@ -167,6 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF17EB5922F0E3D700C6086B /* TealiumFirebase.h in Headers */,
+				CF14019D230478B5002AC330 /* FirebaseCommand.swift in Headers */,
+				CF14019E230478B5002AC330 /* FirebaseCommandRunner.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
