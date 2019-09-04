@@ -29,6 +29,7 @@
 		CF17EB5922F0E3D700C6086B /* TealiumFirebase.h in Headers */ = {isa = PBXBuildFile; fileRef = CF17EB5722F0E3D700C6086B /* TealiumFirebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF17EB6222F0E41E00C6086B /* FirebaseCommandRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17EB6022F0E41E00C6086B /* FirebaseCommandRunner.swift */; };
 		CF17EB6322F0E41E00C6086B /* FirebaseCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF17EB6122F0E41E00C6086B /* FirebaseCommand.swift */; };
+		CFF907052320384A00C85F93 /* TealiumDelegate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF907042320384A00C85F93 /* TealiumDelegate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CF17EB5822F0E3D700C6086B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF17EB6022F0E41E00C6086B /* FirebaseCommandRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCommandRunner.swift; sourceTree = "<group>"; };
 		CF17EB6122F0E41E00C6086B /* FirebaseCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseCommand.swift; sourceTree = "<group>"; };
+		CFF907042320384A00C85F93 /* TealiumDelegate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TealiumDelegate.framework; path = Carthage/Build/iOS/TealiumDelegate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF907052320384A00C85F93 /* TealiumDelegate.framework in Frameworks */,
 				CF14FC1322FCE6F0002AC330 /* GoogleAppMeasurement.framework in Frameworks */,
 				CF14FC1422FCE6F0002AC330 /* nanopb.framework in Frameworks */,
 				CF14FC1522FCE6F0002AC330 /* FirebaseCore.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		CF14FC0722FCE6EF002AC330 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFF907042320384A00C85F93 /* TealiumDelegate.framework */,
 				CF14FC0F22FCE6F0002AC330 /* FIRAnalyticsConnector.framework */,
 				CF14FC0D22FCE6F0002AC330 /* Firebase.framework */,
 				CF14FC0C22FCE6F0002AC330 /* FirebaseAnalytics.framework */,
@@ -277,17 +281,10 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/FIRAnalyticsConnector.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Firebase.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FirebaseAnalytics.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FirebaseCore.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FirebaseInstanceID.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GoogleAppMeasurement.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GoogleUtilities.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/nanopb.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TealiumCore.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TealiumRemoteCommands.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/TealiumTagManagement.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/TealiumDelegate.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
