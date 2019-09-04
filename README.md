@@ -12,7 +12,7 @@ For full documentation, please see the Tealium Learning Community:
 
 ## Example
 
-Navigate to the Keys folder within the TealiumFirebaseExample project and delete the file titled _REPLACE-ME.md_. Replace this file with the _GoogleService-Info.plist_ from your Firebase Console. Information about how to retrieve this file is located [here](https://firebase.google.com/docs/ios/setup#add-config-file).
+Navigate to TealiumFirebaseExample project and delete the file titled _REPLACE-ME.md_. Replace this file with the _GoogleService-Info.plist_ from your Firebase Console. Information about how to retrieve this file is located [here](https://firebase.google.com/docs/ios/setup#add-config-file).
 
 ## License
 
