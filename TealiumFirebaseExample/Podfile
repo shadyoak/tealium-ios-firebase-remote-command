@@ -6,9 +6,7 @@ target 'TealiumFirebaseExample' do
   use_frameworks!
 
   # Pods for TealiumFirebaseExample
-
-  # change the below before flipping rep
-  pod 'TF', '0.1.0'
+  pod 'TealiumFirebase', '0.0.1'
 
   # public pod: 
   # pod 'TealiumBraze'
