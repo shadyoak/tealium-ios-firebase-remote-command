@@ -14,7 +14,6 @@
 		CF14FC1522FCE6F0002AC330 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0A22FCE6F0002AC330 /* FirebaseCore.framework */; };
 		CF14FC1622FCE6F0002AC330 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0B22FCE6F0002AC330 /* FirebaseInstanceID.framework */; };
 		CF14FC1722FCE6F0002AC330 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0C22FCE6F0002AC330 /* FirebaseAnalytics.framework */; };
-		CF14FC1822FCE6F0002AC330 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0D22FCE6F0002AC330 /* Firebase.framework */; };
 		CF14FC1922FCE6F0002AC330 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0E22FCE6F0002AC330 /* GoogleUtilities.framework */; };
 		CF14FC1A22FCE6F0002AC330 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC0F22FCE6F0002AC330 /* FIRAnalyticsConnector.framework */; };
 		CF14FC1B22FCE6F0002AC330 /* TealiumRemoteCommands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF14FC1022FCE6F0002AC330 /* TealiumRemoteCommands.framework */; };
@@ -88,7 +87,6 @@
 				CF14FC1522FCE6F0002AC330 /* FirebaseCore.framework in Frameworks */,
 				CF14FC1622FCE6F0002AC330 /* FirebaseInstanceID.framework in Frameworks */,
 				CF14FC1722FCE6F0002AC330 /* FirebaseAnalytics.framework in Frameworks */,
-				CF14FC1822FCE6F0002AC330 /* Firebase.framework in Frameworks */,
 				CF14FC1922FCE6F0002AC330 /* GoogleUtilities.framework in Frameworks */,
 				CF14FC1A22FCE6F0002AC330 /* FIRAnalyticsConnector.framework in Frameworks */,
 				CF14FC1B22FCE6F0002AC330 /* TealiumRemoteCommands.framework in Frameworks */,
