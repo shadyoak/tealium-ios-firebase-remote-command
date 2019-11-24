@@ -8,7 +8,4 @@ target 'TealiumFirebaseExample' do
   # Pods for TealiumFirebaseExample
   pod 'TealiumFirebase', '0.0.1'
 
-  # public pod: 
-  # pod 'TealiumBraze'
-
 end
