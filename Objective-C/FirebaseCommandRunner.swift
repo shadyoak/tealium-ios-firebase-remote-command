@@ -12,7 +12,7 @@ import FirebaseAnalytics
 @objc
 public protocol FirebaseTrackable {
     func createAnalyticsConfig(_ configuration: [AnyHashable: Any])
-    func logEvent(_ name: String, _ params: [String: Any])
+    func logEvent(_ name: String, _ params: [String: Any]?)
     func setScreenName(_ screenName: String, _ screenClass: String?)
     func setUserProperty(_ property: String, value: String)
     func setUserId(_ id: String)
@@ -38,12 +38,14 @@ public class FirebaseTracker: NSObject, FirebaseTrackable {
         }
     }
     
-    public func logEvent(_ name: String, _ params: [String : Any]) {
+    public func logEvent(_ name: String, _ params: [String : Any]?) {
         Analytics.logEvent(name, parameters: params)
     }
     
     public func setScreenName(_ screenName: String, _ screenClass: String?) {
-        Analytics.setScreenName(screenName, screenClass: screenClass)
+        DispatchQueue.main.async {
+            Analytics.setScreenName(screenName, screenClass: screenClass)
+        }
     }
     
     public func setUserProperty(_ property: String, value: String) {
