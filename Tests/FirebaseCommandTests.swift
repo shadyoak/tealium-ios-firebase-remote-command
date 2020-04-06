@@ -22,10 +22,10 @@ class FirebaseCommandTests: XCTestCase {
     var firebaseParameterNames = [String]()
     
     var mockFirebaseTracker = MockFirebaseTracker()
-    var firebaseCommand: FirebaseCommand!
+    var firebaseCommand: FirebaseRemoteCommand!
     
     override func setUp() {
-        firebaseCommand = FirebaseCommand(firebaseTracker: mockFirebaseTracker)
+        firebaseCommand = FirebaseRemoteCommand(firebaseTracker: mockFirebaseTracker)
     }
 
     override func tearDown() { }

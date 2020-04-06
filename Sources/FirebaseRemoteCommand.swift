@@ -1,5 +1,5 @@
 //
-//  FirebaseCommand.swift
+//  FirebaseRemoteCommand.swift
 
 //
 //  Created by Craig Rouse on 18/12/2017.
@@ -18,7 +18,7 @@ import TealiumRemoteCommands
 import TealiumDelegate
 #endif
 
-public class FirebaseCommand {
+public class FirebaseRemoteCommand {
 
     enum FirebaseKey {
         static let sessionTimeout = "firebase_session_timeout_seconds"

@@ -13,11 +13,11 @@ import TealiumRemoteCommands
 class FirebaseTrackerTests: XCTestCase {
 
     let firebaseTracker = MockFirebaseTracker()
-    var firebaseCommand: FirebaseCommand!
+    var firebaseCommand: FirebaseRemoteCommand!
     var remoteCommand: TealiumRemoteCommand!
     
     override func setUp() {
-        firebaseCommand = FirebaseCommand(firebaseTracker: firebaseTracker)
+        firebaseCommand = FirebaseRemoteCommand(firebaseTracker: firebaseTracker)
         remoteCommand = firebaseCommand.remoteCommand()
     }
 
@@ -81,7 +81,7 @@ class FirebaseTrackerTests: XCTestCase {
         let payload: [String: Any] = ["command_name": "logevent", "firebase_event_name": "event_level_up"]
         if let response = createRemoteCommandResponse(commandId: "firebase", payload: payload) {
             remoteCommand.remoteCommandCompletion(response)
-            XCTAssertEqual(0, firebaseTracker.logEventCallCount)
+            XCTAssertEqual(1, firebaseTracker.logEventCallCount)
         }
         expect.fulfill()
         wait(for: [expect], timeout: 2.0)

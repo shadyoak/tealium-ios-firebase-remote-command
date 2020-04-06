@@ -21,28 +21,24 @@ class TealiumHelper {
     static let shared = TealiumHelper()
 
     let config = TealiumConfig(account: TealiumConfiguration.account,
-                               profile: TealiumConfiguration.profile,
-                               environment: TealiumConfiguration.environment)
+        profile: TealiumConfiguration.profile,
+        environment: TealiumConfiguration.environment)
 
     var tealium: Tealium?
 
     private init() {
         config.shouldUseRemotePublishSettings = false
         config.logLevel = .verbose
-        let list = TealiumModulesList(isWhitelist: false,
-                                      moduleNames: ["autotracking", "collect", "consentmanager"])
-        config.modulesList = list
         tealium = Tealium(config: config,
-                          enableCompletion: { [weak self] _ in
-                              guard let self = self else { return }
-                              guard let remoteCommands = self.tealium?.remoteCommands() else {
-                                  return
-                              }
-                              // MARK: Firebase
-                              let firebaseCommand = FirebaseCommand()
-                              let firebaseRemoteCommand = firebaseCommand.remoteCommand()
-                              remoteCommands.add(firebaseRemoteCommand)
-                          })
+            enableCompletion: { [weak self] _ in
+                guard let self = self else { return }
+                guard let remoteCommands = self.tealium?.remoteCommands() else {
+                    return
+                }
+                // MARK: Firebase
+                let firebaseRemoteCommand = FirebaseRemoteCommand().remoteCommand()
+                remoteCommands.add(firebaseRemoteCommand)
+            })
 
     }
 
