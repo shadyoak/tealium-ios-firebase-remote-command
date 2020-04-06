@@ -30,7 +30,9 @@ public class FirebaseTracker: FirebaseTrackable {
         }
         FirebaseConfiguration.shared.setLoggerLevel(logLevel)
         if FirebaseApp.app() == nil {
-            FirebaseApp.configure()
+            DispatchQueue.main.async {
+                FirebaseApp.configure()
+            }
         }
     }
     

@@ -12,7 +12,7 @@ import TealiumRemoteCommands
 @testable import Firebase
 
 class MockFirebaseTracker: FirebaseTrackable {
-    
+
     var createAnalyticsConfigCallCount = 0
     
     var logEventCallCount = 0
@@ -27,7 +27,7 @@ class MockFirebaseTracker: FirebaseTrackable {
         createAnalyticsConfigCallCount += 1
     }
     
-    func logEvent(_ name: String, _ params: [String : Any]) {
+    func logEvent(_ name: String, _ params: [String : Any]?) {
         logEventCallCount += 1
     }
     
