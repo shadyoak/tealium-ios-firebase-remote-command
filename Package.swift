@@ -24,7 +24,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "TealiumFirebase",
-            dependencies: ["TealiumSwift"],
+            dependencies: [
+                "TealiumCore",
+                "TealiumDelegate",
+                "TealiumRemoteCommands",
+                "TealiumTagManagement",
+            ],
             path: "Sources/"),
         .testTarget(
             name: "TealiumFirebaseTests",
