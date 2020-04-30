@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "TealiumFirebase",
     platforms: [
-        .iOS(.v11),
+        platforms: [.iOS(.v9)],
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
@@ -24,7 +24,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "TealiumFirebase",
-            dependencies: ["tealium-swift"],
+            dependencies: ["TealiumSwift"],
             path: "Sources/"),
         .testTarget(
             name: "TealiumFirebaseTests",
